@@ -2,6 +2,7 @@
   background: var(--theme-background-dark);
   color: var(--white);
   padding: var(--space-l) 0;
+  width : 100%;
 }
 
 .footer a:hover {
@@ -9,9 +10,15 @@
 }
 
 .footer .container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  min-height: 25em;
+  /*display: flex;*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-l);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2em 1em 0.3em;
 }
 
 .footer ul {
