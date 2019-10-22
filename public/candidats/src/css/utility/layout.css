@@ -1,0 +1,43 @@
+
+.row {
+
+  justify-content: space-between;
+  /*align-items: stretch;*/
+  margin-left: -var(--space-s);
+  margin-right: -var(--space-s);
+
+}
+
+.row > * {
+  max-width: 50em;
+}
+
+/* casse le grid boostrap
+.row > * + * {
+  margin-left: var(--space-m);
+}*/
+
+@media (--smaller-than-tablet) {
+  .row {
+    flex-direction: column
+  }
+
+  .row > * + * {
+    margin-left: 0;
+    margin-top: var(--space-m);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: var(--space-s);
+  margin-top: var(--space-s);
+  justify-items: center;
+  justify-content: space-evenly;
+}
+
+.grid .panel + .panel,
+.grid .card + .card {
+  margin: 0;
+}
