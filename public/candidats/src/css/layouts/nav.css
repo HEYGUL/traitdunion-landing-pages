@@ -2,6 +2,7 @@
   width: 100%;
   background: var(--theme-background-white);
   z-index: 100;
+  font-size: larger;
 }
 
 .nav-fixed {
@@ -83,7 +84,7 @@ a.navbar__home {
 span.navbar__domain {
   font-weight: 400;
   color: var(--theme-dark-text);
-  -webkit-padding-after: 3px; /* fix the broken line-height in logo */
+   /*-webkit-padding-after: 3px; fix the broken line-height in logo */
 }
 
 @media (--smaller-than-tablet) {
