@@ -1,11 +1,13 @@
 const express = require('express')
 
 const app = express()
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
+
+const directory = '/' + (process.env.STATIC_DIR || 'public')
+app.use(express.static(__dirname + directory))
 
 // RedirectPermanent / https://traitdunion.beta.gouv.fr/?utm_source=oldsite
 app.get('/', (req, res) => {
-  console.log('/')
   res.redirect(301, 'https://traitdunion.beta.gouv.fr/?utm_source=oldsite')
 })
 
@@ -24,9 +26,12 @@ app.get('/entreprises/', (req, res) => {
   res.redirect(301, 'https://traitdunion.beta.gouv.fr/entreprises?utm_source=oldsite')
 })
 
-app.use(function forceLiveDomain(req, res, next) {
-  return res.redirect(301, 'https://traitdunion.beta.gouv.fr/?utm_source=oldsite')
-});
+app.use((req, res, next) => {
+  if (req.url.indexOf('/candidats/images/') === -1) {
+    return res.redirect(301, 'https://traitdunion.beta.gouv.fr/?utm_source=oldsite')
+  }
+  next()
+})
 
 app.listen(port, function () {
   console.log('Listening on', port)
