@@ -3,9 +3,6 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
-const directory = '/' + (process.env.STATIC_DIR || 'public')
-app.use(express.static(__dirname + directory))
-
 // RedirectPermanent / https://traitdunion.beta.gouv.fr/?utm_source=oldsite
 app.get('/', (req, res) => {
   res.redirect(301, 'https://traitdunion.beta.gouv.fr/?utm_source=oldsite')
@@ -32,6 +29,9 @@ app.use((req, res, next) => {
   }
   next()
 })
+
+const directory = '/' + (process.env.STATIC_DIR || 'public')
+app.use(express.static(__dirname + directory))
 
 app.listen(port, function () {
   console.log('Listening on', port)
