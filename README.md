@@ -1,6 +1,6 @@
 # Disclaimer - DEPRECATED
 Ce projet n'est plus utilisé. https://l.traitdunion.beta.gouv.fr redirige désormais sur https://traitdunion.beta.gouv.fr
-L'application es toujours servi car les images utilisées sur https://traitdunion.beta.gouv.fr y sont hébergées.
+L'application est toujours servie car les images utilisées sur https://traitdunion.beta.gouv.fr y sont hébergées.
 
 # Trait d'union - Landing pages
 Code source pour toutes les landing pages de Trait d'Union
